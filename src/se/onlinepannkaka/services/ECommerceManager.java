@@ -7,18 +7,18 @@ import se.onlinepannkaka.repositories.ProductRepository;
 
 public final class ECommerceManager
 {
-	private final ProductRepository pr;
+	private final ProductRepository productRepository;
 
-	public ECommerceManager(final ProductRepository pr)
+	public ECommerceManager(final ProductRepository productRepository)
 	{
-		this.pr = pr;
+		this.productRepository = productRepository;
 	}
 
 	public Product createProduct(final Product product)
 	{
 		try
 		{
-			return pr.createProduct(product);
+			return productRepository.createProduct(product);
 		}
 		catch (RepositoryException e)
 		{
@@ -30,7 +30,7 @@ public final class ECommerceManager
 	{
 		try
 		{
-			return pr.readProduct(title);
+			return productRepository.readProduct(title);
 		}
 		catch (RepositoryException e)
 		{
@@ -42,7 +42,7 @@ public final class ECommerceManager
 	{
 		try
 		{
-			return pr.updateProduct(product);
+			return productRepository.updateProduct(product);
 		}
 		catch (RepositoryException e)
 		{
@@ -54,7 +54,7 @@ public final class ECommerceManager
 	{
 		try
 		{
-			pr.deleteProduct(title);
+			productRepository.deleteProduct(title);
 		}
 		catch (RepositoryException e)
 		{

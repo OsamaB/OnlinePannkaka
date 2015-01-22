@@ -11,9 +11,11 @@ public class Main
 	{
 		ECommerceManager man = new ECommerceManager(new MySQLRepository());
 		
-		man.deleteProduct("Klassisk pannkaka");
-
 		man.createProduct(new Product("Klassisk pannkaka", "En gammaldags god pannkaka", 10.95, 50));
+
+//		man.updateProduct(new Product("Klassisk pannkaka", "Fortfarande en gammaldags god pannkaka", 10.95, 40));
+		
+//		man.deleteProduct("Klassisk pannkaka");
 		
 		System.out.println(man.readProduct("Klassisk pannkaka"));
 
